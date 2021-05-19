@@ -1,0 +1,44 @@
+{
+  "name": "api_seller_product",
+  "version": "1.0.0",
+  "description": "Api that creates Seller and Products.",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:headless": "./node_modules/.bin/cypress run --headless",
+    "test": "cypress run --spec \"**/*.feature\"",
+    "cucumber": "./node_modules/.bin/cypress-tags run -e"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/feature/steps_definitions"
+  },
+  "author": "Lucas Gois da Silva and Victor Antonio Csagrande",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fucasfucco/Eng_software_ll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fucasfucco/Eng_software_ll/issues"
+  },
+  "homepage": "https://github.com/fucasfucco/Eng_software_ll#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "consign": "^0.1.6",
+    "cpf-cnpj-validator": "^1.0.3",
+    "cypress": "^6.8.0",
+    "cypress-cucumber-preprocessor": "^4.0.3",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-tags": "0.0.21",
+    "cypress-xpath": "^1.6.2",
+    "express": "^4.17.1",
+    "faker": "^5.5.1",
+    "fs-extra": "^9.1.0",
+    "mochawesome": "^6.2.2",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  }
+}
