@@ -51,4 +51,11 @@ module.exports = app => {
         res.status(200).json(response)
       }).catch(err => res.status(400).json(err))
     })
+
+    app.get("/product/name/:product", (req, res) => {
+      product = req.params.product
+      Product.findByName(product).then(response => {
+        res.status(200).json(response)
+      }).catch(err => res.status(400).json(err))
+    })
 }

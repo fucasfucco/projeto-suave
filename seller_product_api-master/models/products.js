@@ -74,6 +74,10 @@ class Product {
     return repositories.findOne(id)
   }
 
+  findByName(product) {
+    return repositories.findByName(product)
+  }
+
   delete(id) {
     return repositories.delete(id).then(results => {
       return {

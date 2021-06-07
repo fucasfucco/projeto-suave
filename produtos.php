@@ -35,6 +35,12 @@
       <li class="nav-item active">
         <a class="nav-link navbar-color" href="about.php">sobre nos <span class="sr-only">(current)</span></a>
       </li>
+      <li>
+        <form action="products.php" method="GET">
+        <input type="text" name="product-name">
+        <button type="submit" class="btn btn-light">pesquisar</button>
+        </form>
+      </li>
     </ul>
   </div>
 </nav>
@@ -103,7 +109,7 @@ echo '<div id="carouselExampleSlidesOnly" class="carrossel carousel slide" data-
    echo '</div>';
   
 ?>
-<div class="bottom-container">
+<div class=" bottom-container">
       <a class="footer-link" href="https://br.linkedin.com/in/lucas-gois-da-silva-8099b11b0?trk=people-guest_people_search-card"><em>LinkedIn</em></a>
       <a class="footer-link" href="https://github.com/fucasfucco"><em>Github</em></a>
       <a class="footer-link" href="https://www.facebook.com/lucas.goisdasilva.3"><em>Facebook</em></a>

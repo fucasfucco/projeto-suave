@@ -12,6 +12,11 @@ class Product {
     return query(sql, id)
   }
 
+  findByName(product) {
+    const sql = `SELECT * FROM Products WHERE name LIKE "%${product}%"`
+    console.log(sql);
+    return query(sql, product)
+  }
 
   delete(id) {
     const sql = 'DELETE FROM Products WHERE id= ?'
