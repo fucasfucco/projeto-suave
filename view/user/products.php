@@ -7,28 +7,27 @@
     <title><?php echo $jsonObj->name ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="../../css/produtos.css">
    
 </head>
-<nav style="background-color: #7b113a;" class="navbar top-bar sticky-top navbar-expand-lg">
-  <a class="navbar-brand navbar-color" href="produtos.php">Projeto Suave</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+<nav style="background-color: #7b113a;" class="navbar navbar-expand-lg navbar-light">
+    <a style="color:white;" class="navbar-brand" href="produtos.php">Projeto Suave</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarText">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link navbar-color" href="about.php">sobre nos <span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <form action="products.php" method="GET">
-        <input type="text" name="product-name" placeholder="Digite Nome do Produto">
-        <button type="submit" class="btn btn-light">pesquisar</button>
-        </form>
+    <li class="nav-item active">
+      <a href="about.php">sobre nos <span class="sr-only">(current)</span></a>
       </li>
     </ul>
+    <form action="products.php" method="GET" class="form-inline my-2 my-lg-0">
+      <input type="text" name="product-name"class="form-control mr-sm-2" placeholder="Digite Nome do Produto">
+      <button type="submit" class="btn btn-outline-success my-2 my-sm-0">pesquisar</button>
+    </form>
   </div>
 </nav>
+
 <style>
     body{
         color: white;

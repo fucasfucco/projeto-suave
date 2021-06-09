@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre nós</title>
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="../../css/about.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -19,7 +19,7 @@
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="euu.jfif" alt="lucas" class="image" style="width:400px;">
+      <img src=".././img/euu.jfif" alt="lucas" class="image" style="width:400px;">
       <div class="container">
         <h2>Lucas Gois</h2>
         <p class="title">CEO & Founder</p>
