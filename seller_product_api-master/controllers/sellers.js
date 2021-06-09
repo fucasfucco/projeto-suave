@@ -91,4 +91,20 @@ module.exports = app => {
     .catch(err => res.status(404).json(err))
   })
 
+  app.post("/update/seller/:id", (req, res) => {
+    id = req.params.id
+    seller = req.body
+
+    Seller.update(seller, id).then(response => {
+      res.status(200).json(response)
+    }).catch(err => res.status(404).json(err))
+  })
+  app.post("/delete/seller/:id", (req, res) => {
+    id = req.params.id
+
+    Seller.delete(id)
+    .then(res.status(204).json())
+    .catch(err => res.status(404).json(err))
+  })
+
 }
