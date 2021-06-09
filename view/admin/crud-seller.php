@@ -32,17 +32,17 @@
 <body>
 
 <nav style="background-color: #7b113a;" class="navbar navbar-expand-lg navbar-light">
-    <a style="color:white;" class="navbar-brand" href="produtos.php">Projeto Suave</a>
+    <a style="color:white;" class="navbar-brand" href="../user/produtos.php">Projeto Suave</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="about.php">sobre nos <span class="sr-only">(current)</span></a>
+      <a style="color:white;" class="nav-link" href="../user/about.php">sobre nos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="login.php">login<span class="sr-only">(current)</span></a>
+      <a style="color:white;" class="nav-link" href="../login/login.php">login<span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form action="products.php" method="GET" class="form-inline my-2 my-lg-0">
@@ -67,7 +67,7 @@ foreach ($jsonObj as &$seller){
    echo  '<p class="card-text">Descrição: ' . $seller->description . '</p>';
    echo '<p>Status do seller -> ' . $seller->status . '</p>';
    echo  '<label class="price "><h3>meio de entrega: ' . $seller->shipping . '</h3></label><button type="submit" href="produto.php" class="btn btn-light" style="float: right;">Atualizar</a></form>';
-   echo '<form action="http://localhost:3000/delete/product/' . $seller->id .'" method="post"><button type="submit" class="butao btn btn-danger">X</button></form>';
+   echo '<form action="http://localhost:3000/delete/seller/' . $seller->id .'" method="post"><button type="submit" class="butao btn btn-danger">X</button></form>';
    echo '</div>';
    echo '</div>';
    echo '</div>';

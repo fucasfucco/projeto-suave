@@ -32,17 +32,17 @@
 <body>
 
 <nav style="background-color: #7b113a;" class="navbar navbar-expand-lg navbar-light">
-    <a style="color:white;" class="navbar-brand" href="produtos.php">Projeto Suave</a>
+    <a style="color:white;" class="navbar-brand" href="../user/produtos.php">Projeto Suave</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="about.php">sobre nos <span class="sr-only">(current)</span></a>
+      <a style="color:white;" class="nav-link" href="../user/about.php">sobre nos <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="login.php">login<span class="sr-only">(current)</span></a>
+      <a style="color:white;" class="nav-link" href="../login/login.php">login<span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form action="products.php" method="GET" class="form-inline my-2 my-lg-0">
