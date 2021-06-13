@@ -6,6 +6,7 @@ class Tabels {
     this.createProducts()
     this.createClients()
     this.createOrders()
+    this.createCampaigns()
   }
 
   createSellers() {
@@ -52,6 +53,18 @@ class Tabels {
         console.log(err);
       }else{
         console.log("Tabel Orders successfull created!");
+      }
+    })
+  }
+
+  createCampaigns() {
+    const sql = 'CREATE TABLE IF NOT EXISTS Campaigns (primary key(campaignId),campaignId int NOT NULL AUTO_INCREMENT, items JSON NOT NULL)'
+
+    this.connection.query(sql, err => {
+      if(err) {
+        console.log(err);
+      }else{
+        console.log("Tabel Campaigns succesfull created!");
       }
     })
   }

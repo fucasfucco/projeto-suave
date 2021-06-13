@@ -64,7 +64,7 @@ foreach ($jsonObj as &$product){
 }
 ?>
 </div>
-<div class="fixed-bottom bottom-container">
+<div class=" bottom-container">
       <a class="footer-link" href="https://br.linkedin.com/in/lucas-gois-da-silva-8099b11b0?trk=people-guest_people_search-card"><em>LinkedIn</em></a>
       <a class="footer-link" href="https://github.com/fucasfucco"><em>Github</em></a>
       <a class="footer-link" href="https://www.facebook.com/lucas.goisdasilva.3"><em>Facebook</em></a>
