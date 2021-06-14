@@ -4,10 +4,10 @@ const repositories = require('../repositories/campaign')
 class Campaign {
     add(newCampaign) {
         return repositories.add(newCampaign).then(results => {
-          const id = results.insertId
+          const campaignId = results.insertId
           return {
             ...newCampaign,
-            id
+            campaignId
           }
         })
       }

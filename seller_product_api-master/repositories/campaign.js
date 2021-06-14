@@ -3,7 +3,6 @@ const query = require('../infra/database/queries')
 class Campaign {
   add(newCampaign) {
     newCampaign = JSON.stringify(newCampaign);
-    
     const sql = `INSERT INTO Campaigns (items) VALUES('${newCampaign}')`
     return query(sql, newCampaign)
   }

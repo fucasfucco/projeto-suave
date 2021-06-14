@@ -11,6 +11,14 @@ module.exports = app => {
         ).catch(err => res.status(400).json(err))
     })
 
+    app.post("/campaign/delete/:id", (req, res) => {
+        id = req.params.id
+
+        Campaign.delete(id)
+        .then(res.status(204).json() 
+        ).catch(err => res.status(400).json(err))
+    })
+
     app.get("/campaign/:id", (req, res) => {
         id = req.params.id
 
@@ -25,9 +33,8 @@ module.exports = app => {
     app.route("/campaigns")
 
     .post((req, res) => {
-        campaign = req.body
-
-        Campaign.add(campaign)
+        camp = req.body
+        Campaign.add(camp)
         .then(newCampaign => {
 
             res.status(201).json(newCampaign)
