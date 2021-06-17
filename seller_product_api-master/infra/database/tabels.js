@@ -58,7 +58,7 @@ class Tabels {
   }
 
   createCampaigns() {
-    const sql = 'CREATE TABLE IF NOT EXISTS Campaigns (primary key(campaignId),campaignId int NOT NULL AUTO_INCREMENT, items JSON NOT NULL)'
+    const sql = 'CREATE TABLE IF NOT EXISTS Campaigns (primary key(campaignId),campaignId int NOT NULL AUTO_INCREMENT, items JSON NOT NULL, name varchar(50))'
 
     this.connection.query(sql, err => {
       if(err) {
