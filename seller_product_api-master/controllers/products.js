@@ -17,7 +17,6 @@ module.exports = app => {
   .get((req, res) => {
     Product.listAll()
       .then(response => {
-        console.log(response)
         response.forEach(response => response.dimensions = (JSON.parse(response.dimensions)));
 
         res.status(200).json(response)

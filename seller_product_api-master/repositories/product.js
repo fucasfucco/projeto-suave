@@ -14,7 +14,6 @@ class Product {
 
   findByName(product) {
     const sql = `SELECT * FROM Products WHERE name LIKE "%${product}%"`
-    console.log(sql);
     return query(sql, product)
   }
 

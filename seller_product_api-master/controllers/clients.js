@@ -40,7 +40,6 @@ module.exports = app => {
     id = req.params.id
     Client.update(client, id)
     .then(client => {
-      console.log(client);
       res.status(200).json(client)
     }).catch(err => res.status(400).json(err))
   })
