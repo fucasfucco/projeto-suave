@@ -52,21 +52,24 @@ $jsonObj = json_decode($produtos);
 </div>
 <div class="row" style="margin:2%;">
 <?php
-foreach ($jsonObj->items as &$product){
-   echo '<div class="col-sm-2"><div class="card" style="margin:2%; margin-bottom:10%;">';
-   echo  '<div class="card-body card-margin">';
-   echo '<form action="produto.php" method="GET">';
-   echo '<input type="hidden" name="ID" value="' . $product->id . '">';
-   echo  '<img class="img-fluid image" src="'. $product->image .'" alt="">';
-   echo  '<h5 class="card-title name">' . $product->name . '</h5>';
-   echo '<hr><h5 class="card-title name">' . $product->category . '</h5>';
-   echo  '<p class="card-text">' . $product->description . '</p>';
-   echo  '<label class="price "><h3>R$' . $product->price . '</h3></label><button type="submit" href="produto.php" class="btn btn-light" style="float: right;">Comprar</a></form>';
-   echo '</div>';
-   echo '</div>';
-   echo '</div>';
-    unset($product);
-    }
+foreach ($jsonObj->items as &$miniProduct) {
+  $novo = file_get_contents('http://localhost:3000/product/' . $miniProduct);
+  $decodificado = json_decode($novo);
+  echo '<div class="col-sm-2"><div class="card" style="margin:2%; margin-bottom:10%;">';
+  echo  '<div class="card-body card-margin">';
+  echo '<form action="produto-att.php" method="GET">';
+  echo '<input type="hidden" name="ID" value="' . $decodificado->id . '">';
+  echo  '<img class="img-fluid image" src="' . $decodificado->image . '" alt="">';
+  echo  '<h5 class="card-title name">' . $decodificado->name . '</h5>';
+  echo '<hr><h5 class="card-title name">' . $decodificado->category . '</h5>';
+  echo  '<p class="card-text">' . $decodificado->description . '</p>';
+  echo  '<label class="price "><h3>R$' . $decodificado->price . '</h3></label><button type="button" onclick="addProduct(' . $decodificado->id . ')" class="btn btn-light" style="float: right;">Adicionar</a></form>';
+  echo '<form action="http://localhost:3000/delete/product/' . $decodificado->id . '" method="post"><button type="submit" class="butao btn btn-danger">X</button></form>';
+  echo '</div>';
+  echo '</div>';
+  echo '</div>';
+  unset($miniProduct);
+}
 ?>
 </div>
 <div class="bottom-container">

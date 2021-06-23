@@ -34,12 +34,6 @@ if(!empty($_GET["ID"])){
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="./seller.php">Criar Seller <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="./dashboard.php">Criar Produtos <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
       <a style="color:white;" class="nav-link" href="../login/login.php">Login<span class="sr-only">(current)</span></a>
       </li>

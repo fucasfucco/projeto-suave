@@ -60,7 +60,7 @@ $jsonObj = json_decode($produtos);
 foreach ($jsonObj as &$product){
    echo '<div class="col-sm-2"><div class="card" style="margin:2%; margin-bottom:10%;">';
    echo  '<div class="card-body card-margin">';
-   echo '<form action="dashboard.php" method="GET">';
+   echo '<form action="produto-att.php" method="GET">';
    echo '<input type="hidden" name="ID" value="' . $product->id . '">';
    echo  '<img class="img-fluid image" src="'. $product->image .'" alt="">';
    echo  '<h5 class="card-title name">' . $product->name . '</h5>';

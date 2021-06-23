@@ -1,6 +1,11 @@
+<?php
+if(!empty($_GET["ID"])){
+    $produtos = file_get_contents('http://localhost:3000/campaign/' . $_GET["ID"]);
+    $jsonObj = json_decode($produtos);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,24 +65,45 @@
             </form>
         </div>
     </nav>
+    <?php
 
-    <div id="campaign">
-        <form method="post" action="http://localhost:3000/campaigns">
-            <input type="text" class="form-control" name="name" placeholder="Nome da Campanha" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder="Produtos" required>
-            <input type="text" class="form-control" name="items" placeholder=Produtos" required>
+    if(!empty($_GET["ID"])){
+        echo '<div id="campaign">';
+        echo '<form method="post" action="http://localhost:3000/campaign/update/' . $_GET['ID'] .'">';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->name . '" name="name" placeholder="Nome da Campanha" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[0] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[1] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[2] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[3] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[4] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[5] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[6] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[7] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[8] . '" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" value="' . $jsonObj->items[9] . '" name="items" placeholder=Produtos" required>';
+        echo '    <button type="submit" class="btn btn-primary btn-block">Atualizar</button>';
+        echo '</form>';
+        echo '</div>';
+    }else{
+        echo '<div id="campaign">';
+        echo '<form method="post" action="http://localhost:3000/campaigns">';
+        echo '    <input type="text" class="form-control" name="name" placeholder="Nome da Campanha" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder="Produtos" required>';
+        echo '    <input type="text" class="form-control" name="items" placeholder=Produtos" required>';
+        echo '    <button type="submit" class="btn btn-primary btn-block">Criar</button>';
+        echo '</form>';
+        echo '</div>';
+    }
+    ?>
 
-            <button type="submit" class="btn btn-primary btn-block">Criar</button>
-        </form>
-    </div>
 
 
     <div class="row" style="margin:2%;">
@@ -87,11 +113,11 @@
         foreach ($jsonObj as &$product) {
             echo '<div class="col-sm-2"><div class="card" style="margin:2%; margin-bottom:10%;">';
             echo  '<div class="card-body card-margin">';
-            echo '<form action="dashboard.php" method="GET">';
+            echo '<form action="produto-att.php" method="GET">';
             echo '<input type="hidden" name="ID" value="' . $product->id . '">';
             echo  '<img class="img-fluid image" src="' . $product->image . '" alt="">';
-            echo  '<h5 class="card-title name">' . $product->name . '</h5>';
-            echo '<hr><h5 class="card-title name">' . $product->category . '</h5>';
+            echo  '<h5 class="card-title name">' . $product->name . '</h5>';;
+            echo '<hr><h5 class="card-title name">' . $product->category . '-ID = ' . $product->id . '</h5>';
             echo  '<p class="card-text">' . $product->description . '</p>';
             echo  '<label class="price "><h3>R$' . $product->price . '</h3></label>';
             echo '</div>';

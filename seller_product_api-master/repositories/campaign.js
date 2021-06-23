@@ -13,6 +13,13 @@ class Campaign {
     return query(sql)
   }
 
+  update(update, id) {
+    update.items = JSON.stringify(update.items)
+    console.log(update.items);
+    const sql = `UPDATE Campaigns SET name = '${update.name}', items = '${update.items}' WHERE campaignId = ${id}`
+    return query(sql, [update, id])
+  }
+
   findOne(id) {
     const sql = 'SELECT * FROM Campaigns WHERE campaignId = ?'
     return query(sql, id)

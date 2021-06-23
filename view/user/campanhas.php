@@ -75,7 +75,7 @@
                 $decodificado = json_decode($novo);
                 echo '<div class="col-sm-2"><div class="card" style="margin:2%; margin-bottom:10%;">';
                 echo  '<div class="card-body card-margin">';
-                echo '<form action="dashboard.php" method="GET">';
+                echo '<form action="produto-att.php" method="GET">';
                 echo '<input type="hidden" name="ID" value="' . $decodificado->id . '">';
                 echo  '<img class="img-fluid image" src="' . $decodificado->image . '" alt="">';
                 echo  '<h5 class="card-title name">' . $decodificado->name . '</h5>';

@@ -20,6 +20,11 @@ class Campaign {
         return repositories.findOne(id)
       }
     
+      update(update, id){
+        return repositories.update(id, update)
+        .then(results => id)
+      }
+
       delete(id) {
         return repositories.delete(id)
       }

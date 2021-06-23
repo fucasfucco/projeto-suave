@@ -30,6 +30,31 @@ module.exports = (app) => {
       .catch((err) => res.status(400).json(err));
   });
 
+
+
+
+  app.post("/campaign/update/:id", (req, res) => {
+    id = req.params.id;
+    updated = req.body;
+
+    Campaign.update(id, updated)
+    .then(update => {
+      res.status(200).json(update)
+    }).catch(err => res.status(400).json(err))
+  })
+
+
+  app.patch("/campaign/update/:id", (req, res) => {
+    id = req.params.id;
+    updated = req.body;
+
+    Campaign.update(id, updated)
+    .then(update => {
+      res.status(200).json(update)
+    }).catch(err => res.status(400).json(err))
+  })
+
+
   app
     .route("/campaigns")
 
