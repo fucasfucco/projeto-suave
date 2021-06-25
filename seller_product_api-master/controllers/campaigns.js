@@ -19,6 +19,15 @@ module.exports = (app) => {
       .catch((err) => res.status(400).json(err));
   });
 
+
+  app.post("/campaign/delete/:id", (req, res) => {
+    id = req.params.id;
+
+    Campaign.delete(id)
+      .then(res.status(204).json())
+      .catch((err) => res.status(400).json(err));
+  });
+
   app.get("/campaign/:id", (req, res) => {
     id = req.params.id;
 
