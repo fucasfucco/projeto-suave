@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,10 +37,17 @@
     <ul class="navbar-nav mr-auto">
     <li class="nav-item">
       <a style="color:white;" class="nav-link" href="about.php">sobre nos <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="../login/login.php">login<span class="sr-only">(current)</span></a>
-      </li>
+      <?php
+                 if (!empty($_SESSION['usuario'])) {
+                    echo '<li class="nav-item">';
+                    echo '<a style="color:white;" class="nav-link" href="../../login/logout.php">logout<span class="sr-only">(current)</span></a>';
+                    echo '</li>';
+                 }else{
+                    echo '<li class="nav-item">';
+                    echo '<a style="color:white;" class="nav-link" href="../../login/index.php">login<span class="sr-only">(current)</span></a>';
+                    echo '</li>';
+                 }
+                ?> 
     </ul>
     <form action="products.php" method="GET" class="form-inline my-2 my-lg-0">
       <input type="text" name="product-name"class="form-control mr-sm-2" placeholder="Digite Nome do Produto">

@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(!empty($_GET["ID"])){
     $produtos = file_get_contents('http://localhost:3000/seller/' . $_GET["ID"]);
     $jsonObj = json_decode($produtos);
@@ -34,9 +35,17 @@ if(!empty($_GET["ID"])){
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-      <a style="color:white;" class="nav-link" href="../login/login.php">Login<span class="sr-only">(current)</span></a>
-      </li>
+    <?php
+                 if (!empty($_SESSION['usuario'])) {
+                    echo '<li class="nav-item">';
+                    echo '<a style="color:white;" class="nav-link" href="../../login/logout.php">logout<span class="sr-only">(current)</span></a>';
+                    echo '</li>';
+                 }else{
+                    echo '<li class="nav-item">';
+                    echo '<a style="color:white;" class="nav-link" href="../../login/index.php">login<span class="sr-only">(current)</span></a>';
+                    echo '</li>';
+                 }
+                ?> 
     </ul>
     <form action="products.php" method="GET" class="form-inline my-2 my-lg-0">
       <input type="text" name="product-name"class="form-control mr-sm-2" placeholder="Digite Nome do Produto">
