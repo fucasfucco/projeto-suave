@@ -31,6 +31,9 @@ OR JUST
 
 npm install(install all dependencies)
 ```
+
+**Exemplo de imagem para salver nos produtos: https://statics.angeloni.com.br/super/files/produtos/4560031/4560031_1_medium.jpg**
+
 ## Built With
 ```
 NodeJS with Express - Backend framework used.
@@ -39,7 +42,6 @@ MySQL - As the database.
 Cypress - As the automated testing framework.
 ```
 
-**Exemplo de imagem para salver nos produtos: https://statics.angeloni.com.br/super/files/produtos/4560031/4560031_1_medium.jpg**
 
 **README**
 ```
