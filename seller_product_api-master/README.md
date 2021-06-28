@@ -39,6 +39,8 @@ MySQL - As the database.
 Cypress - As the automated testing framework.
 ```
 
+**Exemplo de imagem para salver nos produtos: https://statics.angeloni.com.br/super/files/produtos/4560031/4560031_1_medium.jpg**
+
 **README**
 ```
 Please read README.md for details on our code of conduct, and the process for submitting pull requests to us.
