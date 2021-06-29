@@ -9,8 +9,8 @@ module.exports = app => {
     Product.add(product)
     .then(newProduct => {
       newProduct.dimensions = JSON.parse(newProduct.dimensions)
-
-      res.status(201).json(newProduct)}
+      res.send(`<h1>Criado com sucesso!</h1><form action="http://localhost/projeto-suave/seller_product_api-master/view/user/produto.php" method="GET"><input type="hidden" name="ID" value="${newProduct.productId}"><button>Visualizar</button></form>`)
+    }
     ).catch(err => res.status(400).json(err))
   })
 
@@ -70,7 +70,7 @@ module.exports = app => {
         product = req.body
   
         Product.update(product, id).then(response => {
-          res.status(200).json(response)
+          res.send(`<h1>Criado com sucesso!</h1><form action="http://localhost/projeto-suave/seller_product_api-master/view/user/produto.php" method="GET"><input type="hidden" name="ID" value="${id}"><button>Visualizar</button></form>`)
         }).catch(err => res.status(400).json(err))
     })
 }

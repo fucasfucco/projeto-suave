@@ -78,7 +78,7 @@ foreach ($jsonObj as &$product){
    echo '<hr><h5 class="card-title name">' . $product->category . '</h5>';
    echo  '<p class="card-text">' . $product->description . '</p>';
    echo  '<label class="price "><h3>R$' . $product->price . '</h3></label><button type="submit" href="produto.php" class="btn btn-light" style="float: right;">Atualizar</a></form>';
-   echo '<form action="http://localhost:3000/delete/product/' . $product->id .'" method="post"><button type="submit" class="butao btn btn-danger">X</button></form>';
+   echo '<form action="http://localhost:3000/delete/product/' . $product->id .'" method="post"><button type="submit" onClick="reloads()" class="butao btn btn-danger">X</button></form>';
    echo '</div>';
    echo '</div>';
    echo '</div>';
@@ -93,6 +93,16 @@ foreach ($jsonObj as &$product){
       <p class="copyright">©2021 Projeto Suave.</p>
     </div>
 </body>
+<script>
+
+function reloads(){
+  setTimeout(() => {
+    window.location.reload();
+}, 100);
+  
+}
+
+</script>
 </html>
 
 

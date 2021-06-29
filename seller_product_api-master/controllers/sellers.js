@@ -11,7 +11,8 @@ module.exports = app => {
         .then(newSeller =>{
           newSeller.address = JSON.parse(newSeller.address)
 
-          res.status(201).json(newSeller)}
+          res.send(`<h1>Criado com sucesso!</h1><form action="http://localhost/projeto-suave/seller_product_api-master/view/admin/seller.php" method="GET"><input type="hidden" name="ID" value="${newSeller.id}"><button>Visualizar</button></form>`)
+        }
         ).catch(err => res.status(400).json(err))
     })
 
@@ -96,7 +97,7 @@ module.exports = app => {
     seller = req.body
 
     Seller.update(seller, id).then(response => {
-      res.status(200).json(response)
+      res.send(`<h1>Criado com sucesso!</h1><form action="http://localhost/projeto-suave/seller_product_api-master/view/admin/seller.php" method="GET"><input type="hidden" name="ID" value="${id}"><button>Visualizar</button></form>`)
     }).catch(err => res.status(404).json(err))
   })
   app.post("/delete/seller/:id", (req, res) => {

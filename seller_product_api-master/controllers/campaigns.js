@@ -71,7 +71,8 @@ module.exports = (app) => {
       camp = req.body;
       Campaign.add(camp)
         .then((newCampaign) => {
-          res.status(201).json(newCampaign);
+          
+          res.send(`<h1>Criado com sucesso!</h1><form action="http://localhost/projeto-suave/seller_product_api-master/view/user/produto.php" method="GET"><input type="hidden" name="ID" value="${newCampaign.campaignId}"><button>Visualizar</button></form>`)
         })
         .catch((err) => res.status(400).json(err));
     })
